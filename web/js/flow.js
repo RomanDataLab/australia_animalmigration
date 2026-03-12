@@ -319,6 +319,9 @@ class FlowVisualization {
                 const key = sp.scientific.replace(/ /g, '_');
                 const color = this._getSpeciesColorSolid(key);
                 const wikiUrl = `https://en.wikipedia.org/wiki/${sp.wiki}`;
+                const speciesNames = (window.ANIMAL_NAMES && window.ANIMAL_NAMES[key]) || {};
+                const englishName = speciesNames.english || sp.common;
+                const latinName = speciesNames.latin || sp.scientific;
 
                 const tile = document.createElement('div');
                 tile.className = 'species-tile';
@@ -327,12 +330,11 @@ class FlowVisualization {
 
                 // Tooltip
                 tile.innerHTML =
-                    `<img src="" alt="${sp.common}" loading="lazy">` +
+                    `<img src="" alt="${englishName}" loading="lazy">` +
                     `<span class="species-border"></span>` +
                     `<span class="species-tooltip">` +
-                        `<span class="tt-common">${sp.common}</span><br>` +
-                        `<span class="tt-sci">${sp.scientific}</span><br>` +
-                        `<span class="tt-hint">double click — see article</span>` +
+                        `<span class="tt-common">${englishName}</span><br>` +
+                        `<span class="tt-sci">${latinName}</span>` +
                     `</span>`;
 
                 // Fetch Wikipedia thumbnail
