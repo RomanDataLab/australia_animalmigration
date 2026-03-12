@@ -1,0 +1,220 @@
+{
+  "groups": {
+    "mammals": [
+      {
+        "scientific": "Macropus giganteus",
+        "common": "Eastern Grey Kangaroo",
+        "wiki": "Eastern_grey_kangaroo",
+        "file": "Macropus_giganteus_flow.json",
+        "points": 214996
+      },
+      {
+        "scientific": "Phascolarctos cinereus",
+        "common": "Koala",
+        "wiki": "Koala",
+        "file": "Phascolarctos_cinereus_flow.json",
+        "points": 299923
+      },
+      {
+        "scientific": "Tachyglossus aculeatus",
+        "common": "Short-beaked Echidna",
+        "wiki": "Short-beaked_echidna",
+        "file": "Tachyglossus_aculeatus_flow.json",
+        "points": 104677
+      },
+      {
+        "scientific": "Macropus rufus",
+        "common": "Red Kangaroo",
+        "wiki": "Red_kangaroo",
+        "file": "Macropus_rufus_flow.json",
+        "points": 80049
+      },
+      {
+        "scientific": "Vombatus ursinus",
+        "common": "Common Wombat",
+        "wiki": "Common_wombat",
+        "file": "Vombatus_ursinus_flow.json",
+        "points": 128596
+      },
+      {
+        "scientific": "Trichosurus vulpecula",
+        "common": "Common Brushtail Possum",
+        "wiki": "Common_brushtail_possum",
+        "file": "Trichosurus_vulpecula_flow.json",
+        "points": 281973
+      },
+      {
+        "scientific": "Isoodon obesulus",
+        "common": "Southern Brown Bandicoot",
+        "wiki": "Southern_brown_bandicoot",
+        "file": "Isoodon_obesulus_flow.json",
+        "points": 20049
+      },
+      {
+        "scientific": "Perameles nasuta",
+        "common": "Long-nosed Bandicoot",
+        "wiki": "Long-nosed_bandicoot",
+        "file": "Perameles_nasuta_flow.json",
+        "points": 49135
+      },
+      {
+        "scientific": "Wallabia bicolor",
+        "common": "Swamp Wallaby",
+        "wiki": "Swamp_wallaby",
+        "file": "Wallabia_bicolor_flow.json",
+        "points": 519946
+      },
+      {
+        "scientific": "Pseudocheirus peregrinus",
+        "common": "Common Ringtail Possum",
+        "wiki": "Common_ringtail_possum",
+        "file": "Pseudocheirus_peregrinus_flow.json",
+        "points": 134186
+      }
+    ],
+    "birds": [
+      {
+        "scientific": "Dromaius novaehollandiae",
+        "common": "Emu",
+        "wiki": "Emu",
+        "file": "Dromaius_novaehollandiae_flow.json",
+        "points": 133556
+      },
+      {
+        "scientific": "Cacatua galerita",
+        "common": "Sulphur-crested Cockatoo",
+        "wiki": "Sulphur-crested_cockatoo",
+        "file": "Cacatua_galerita_flow.json",
+        "points": 1029290
+      },
+      {
+        "scientific": "Gymnorhina tibicen",
+        "common": "Australian Magpie",
+        "wiki": "Australian_magpie",
+        "file": "Gymnorhina_tibicen_flow.json",
+        "points": 2167682
+      },
+      {
+        "scientific": "Platycercus eximius",
+        "common": "Eastern Rosella",
+        "wiki": "Eastern_rosella",
+        "file": "Platycercus_eximius_flow.json",
+        "points": 600651
+      },
+      {
+        "scientific": "Corvus coronoides",
+        "common": "Australian Raven",
+        "wiki": "Australian_raven",
+        "file": "Corvus_coronoides_flow.json",
+        "points": 831764
+      },
+      {
+        "scientific": "Acanthiza pusilla",
+        "common": "Brown Thornbill",
+        "wiki": "Brown_thornbill",
+        "file": "Acanthiza_pusilla_flow.json",
+        "points": 628404
+      },
+      {
+        "scientific": "Meliphaga lewinii",
+        "common": "Lewin's Honeyeater",
+        "wiki": "Lewin%27s_honeyeater",
+        "file": "Meliphaga_lewinii_flow.json",
+        "points": 405395
+      },
+      {
+        "scientific": "Pardalotus punctatus",
+        "common": "Spotted Pardalote",
+        "wiki": "Spotted_pardalote",
+        "file": "Pardalotus_punctatus_flow.json",
+        "points": 540395
+      },
+      {
+        "scientific": "Rhipidura leucophrys",
+        "common": "Willie Wagtail",
+        "wiki": "Willie_wagtail",
+        "file": "Rhipidura_leucophrys_flow.json",
+        "points": 1363739
+      },
+      {
+        "scientific": "Eolophus roseicapilla",
+        "common": "Galah",
+        "wiki": "Galah",
+        "file": "Eolophus_roseicapilla_flow.json",
+        "points": 1187029
+      }
+    ],
+    "amphibians": [
+      {
+        "scientific": "Litoria caerulea",
+        "common": "Green Tree Frog",
+        "wiki": "Australian_green_tree_frog",
+        "file": "Litoria_caerulea_flow.json",
+        "points": 43703
+      },
+      {
+        "scientific": "Limnodynastes dumerilii",
+        "common": "Eastern Banjo Frog",
+        "wiki": "Eastern_banjo_frog",
+        "file": "Limnodynastes_dumerilii_flow.json",
+        "points": 68813
+      },
+      {
+        "scientific": "Crinia signifera",
+        "common": "Common Eastern Froglet",
+        "wiki": "Common_eastern_froglet",
+        "file": "Crinia_signifera_flow.json",
+        "points": 281365
+      },
+      {
+        "scientific": "Litoria peronii",
+        "common": "Peron's Tree Frog",
+        "wiki": "Peron%27s_tree_frog",
+        "file": "Litoria_peronii_flow.json",
+        "points": 95007
+      },
+      {
+        "scientific": "Limnodynastes tasmaniensis",
+        "common": "Spotted Grass Frog",
+        "wiki": "Spotted_grass_frog",
+        "file": "Limnodynastes_tasmaniensis_flow.json",
+        "points": 110596
+      },
+      {
+        "scientific": "Litoria ewingii",
+        "common": "Brown Tree Frog",
+        "wiki": "Brown_tree_frog",
+        "file": "Litoria_ewingii_flow.json",
+        "points": 59639
+      },
+      {
+        "scientific": "Uperoleia laevigata",
+        "common": "Smooth Toadlet",
+        "wiki": "Smooth_toadlet",
+        "file": "Uperoleia_laevigata_flow.json",
+        "points": 13380
+      },
+      {
+        "scientific": "Litoria raniformis",
+        "common": "Growling Grass Frog",
+        "wiki": "Growling_grass_frog",
+        "file": "Litoria_raniformis_flow.json",
+        "points": 19989
+      },
+      {
+        "scientific": "Pseudophryne bibronii",
+        "common": "Bibron's Toadlet",
+        "wiki": "Bibron%27s_toadlet",
+        "file": "Pseudophryne_bibronii_flow.json",
+        "points": 11485
+      },
+      {
+        "scientific": "Litoria verreauxii",
+        "common": "Verreaux's Tree Frog",
+        "wiki": "Whistling_tree_frog",
+        "file": "Litoria_verreauxii_flow.json",
+        "points": 40321
+      }
+    ]
+  }
+}

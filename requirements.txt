@@ -1,0 +1,36 @@
+# Python dependencies for Australia Migrations in Motion Map
+
+# Core scientific computing
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Geospatial processing
+rasterio>=1.2.0
+geopandas>=0.10.0
+shapely>=1.8.0
+fiona>=1.8.0
+pyproj>=3.2.0
+
+# CircuitScape (install separately via conda recommended)
+# conda install -c conda-forge circuitscape
+
+# Data download and API access
+requests>=2.26.0
+urllib3>=1.26.0
+galah>=0.12.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Configuration
+configparser>=5.0.0
+
+# Progress bars
+tqdm>=4.62.0
+
+# JSON handling
+json5>=0.9.0
+
+

@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Data files (can be large)
+data/species/*.json
+data/climate/*
+data/output/*.tif
+data/output/*.asc
+data/output/*.json
+
+# IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Mapbox token (keep secret)
+web/js/map.js
+# Actually, better to use environment variable for token
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Project-local ignores
+video/
+config/mapboxConfig.js
+
+

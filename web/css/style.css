@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    position: relative;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: 0;
+    background-color: #1a1a2e;
+}
+
+#sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 370px;
+    max-height: 100vh;
+    background: rgba(22, 22, 35, 0.95);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#sidebar h1 {
+    font-size: 22px;
+    margin-bottom: 3px;
+    color: #e0e0e0;
+}
+
+#sidebar h2 {
+    font-size: 16px;
+    color: #8899a6;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.mode-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid #444;
+    border-radius: 4px;
+    background: #2a2a3d;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.mode-btn:hover {
+    border-color: #6a6a8a;
+    color: #ddd;
+}
+
+.mode-btn.active {
+    background: #4a9eff;
+    color: #fff;
+    border-color: #4a9eff;
+}
+
+#sidebar h3 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #c0c0d0;
+}
+
+.info-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a2a3d;
+}
+
+.info-section:last-child {
+    border-bottom: none;
+}
+
+.info-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.info-section a {
+    color: #5dade2;
+    text-decoration: none;
+}
+
+.info-section a:hover {
+    text-decoration: underline;
+}
+
+.info-section ul {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.info-section li {
+    margin-bottom: 5px;
+}
+
+/* ─── Species group controls ─────────────────────────────── */
+
+#species-controls {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2a2a3d;
+}
+
+.group-section {
+    margin-bottom: 8px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.group-header {
+    padding: 8px 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.group-section[data-group="mammals"] .group-header {
+    background: linear-gradient(135deg, #3a1a1a, #4a2020);
+}
+.group-section[data-group="birds"] .group-header {
+    background: linear-gradient(135deg, #1a2a3a, #1e3450);
+}
+.group-section[data-group="amphibians"] .group-header {
+    background: linear-gradient(135deg, #1a3a1a, #1e4a28);
+}
+
+.group-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ddd;
+    margin: 0;
+}
+
+.group-toggle input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.group-name {
+    flex: 1;
+}
+
+.group-arrow {
+    font-size: 10px;
+    color: #666;
+    transition: transform 0.2s;
+}
+
+.group-section.collapsed .group-arrow {
+    transform: rotate(-90deg);
+}
+
+.species-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    padding: 4px;
+    background: #1e1e2e;
+    max-height: 500px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease;
+}
+
+.group-section.collapsed .species-list {
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.species-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #333;
+    user-select: none;
+    aspect-ratio: 1;
+}
+
+.species-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.2s;
+}
+
+.species-tile.inactive img {
+    filter: grayscale(1);
+}
+
+.species-tile .species-border {
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    pointer-events: none;
+    transition: border-color 0.2s;
+}
+
+.species-tile:not(.inactive) .species-border {
+    border-color: currentColor;
+}
+
+.species-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.3;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 10;
+}
+
+.species-tile:hover .species-tooltip {
+    opacity: 1;
+}
+
+.species-tooltip .tt-common {
+    font-weight: 600;
+}
+
+.species-tooltip .tt-sci {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.species-tooltip .tt-hint {
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+/* ─── Visualization controls ─────────────────────────────── */
+
+.controls {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a2a3d;
+}
+
+.controls:last-child {
+    border-bottom: none;
+}
+
+.controls label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #999;
+    cursor: pointer;
+}
+
+.controls input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.controls input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.controls span {
+    float: right;
+    color: #666;
+    font-size: 12px;
+}
+
+#advanced-controls {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #2a2a3d;
+}
+
+/* ─── Flow canvas ─────────────────────────────────────────── */
+
+#flow-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: transparent;
+}
+
+/* ─── Mapbox controls ─────────────────────────────────────── */
+
+.mapboxgl-ctrl-top-right { top: 20px; right: 20px; }
+.mapboxgl-ctrl-bottom-right { bottom: 20px; right: 20px; }
+
+/* ─── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        max-height: 40vh;
+        position: relative;
+    }
+    #map {
+        height: 60vh;
+    }
+}

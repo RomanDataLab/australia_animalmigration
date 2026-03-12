@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Australia Migrations in Motion</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-item { margin: 10px 0; padding: 10px; background: #f0f0f0; }
+        .pass { color: green; }
+        .fail { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Configuration Test</h1>
+    <div id="results"></div>
+    
+    <script>
+        const results = document.getElementById('results');
+        
+        // Test 1: Check if config loads
+        function testConfig() {
+            const script = document.createElement('script');
+            script.src = 'js/config.js';
+            script.onload = () => {
+                if (window.MAPBOX_CONFIG && window.MAPBOX_CONFIG.accessToken) {
+                    results.innerHTML += '<div class="test-item"><span class="pass">✓</span> Config file loaded. Token: ' + window.MAPBOX_CONFIG.accessToken.substring(0, 20) + '...</div>';
+                } else {
+                    results.innerHTML += '<div class="test-item"><span class="fail">✗</span> Config file loaded but token not found</div>';
+                }
+            };
+            script.onerror = () => {
+                results.innerHTML += '<div class="test-item"><span class="fail">✗</span> Failed to load config.js</div>';
+            };
+            document.head.appendChild(script);
+        }
+        
+        // Test 2: Check if sample data exists
+        async function testSampleData() {
+            try {
+                const response = await fetch('../data/output/sample_flow.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    results.innerHTML += '<div class="test-item"><span class="pass">✓</span> Sample flow data found. Grid size: ' + data.u[0].length + 'x' + data.u.length + '</div>';
+                } else {
+                    results.innerHTML += '<div class="test-item"><span class="fail">✗</span> Sample flow data not found (HTTP ' + response.status + ')</div>';
+                }
+            } catch (e) {
+                results.innerHTML += '<div class="test-item"><span class="fail">✗</span> Error loading sample data: ' + e.message + '</div>';
+            }
+        }
+        
+        // Run tests
+        testConfig();
+        setTimeout(testSampleData, 500);
+    </script>
+</body>
+</html>
+
+
