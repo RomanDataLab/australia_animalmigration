@@ -43,8 +43,7 @@ data/output/*.json
 Thumbs.db
 
 # Mapbox token (keep secret)
-web/js/map.js
-# Actually, better to use environment variable for token
+# Use ignored local config file instead of committing secrets
 
 # Jupyter
 .ipynb_checkpoints/
